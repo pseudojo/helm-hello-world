@@ -25,17 +25,17 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - name: tomcat
+            - name: {{ .Values.service.portName | default "tomcat" }}
               containerPort: {{ .Values.service.port }}
               protocol: TCP
           livenessProbe:
             httpGet:
               path: /
-              port: tomcat
+              port: {{ .Values.service.portName | default .Values.service.port }}
           readinessProbe:
             httpGet:
               path: /
-              port: tomcat
+              port: {{ .Values.service.portName | default .Values.service.port }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

@@ -1,23 +1,21 @@
-# Default values for hello-world.
+# Default values for mysubchart.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: pseudojo/node-hello-world
-  tag: 0.1
-  #pullPolicy: IfNotPresent
-  pullPolicy: Always 
+  repository: nginx
+  tag: stable
+  pullPolicy: IfNotPresent
 
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
 service:
-  type: LoadBalancer
-  portName: tomcat
-  port: 8080
+  type: ClusterIP
+  port: 80
 
 ingress:
   enabled: false
