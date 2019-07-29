@@ -1,0 +1,48 @@
+affinity: {}
+fullnameOverride: ""
+image:
+  pullPolicy: Always
+  repository: pseudojo/node-hello-world
+  tag: 0.1
+imagePullSecrets: []
+ingress:
+  annotations: {}
+  enabled: false
+  hosts:
+  - host: chart-example.local
+    paths: []
+  tls: []
+nameOverride: ""
+nodeSelector: {}
+replicaCount: 1
+resources: {}
+service:
+  port: 8080
+  portName: tomcat
+  type: LoadBalancer
+subchart-example:
+  affinity: {}
+  fullnameOverride: ""
+  global: {}
+  image:
+    pullPolicy: Always
+    repository: pseudojo/node-hello-world
+    tag: 0.1
+  imagePullSecrets: []
+  ingress:
+    annotations: {}
+    enabled: false
+    hosts:
+    - host: chart-example.local
+      paths: []
+    tls: []
+  nameOverride: ""
+  nodeSelector: {}
+  replicaCount: 1
+  resources: {}
+  service:
+    port: 8080
+    type: LoadBalancer
+  tolerations: []
+tolerations: []
+
