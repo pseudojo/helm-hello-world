@@ -1,0 +1,7 @@
+dependencies:
+  - name: subchart-example
+    version: 0.1.0
+    #chartmuseum
+    repository: http://localhost:8080/
+    condition: true
+
