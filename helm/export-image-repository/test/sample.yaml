@@ -1,0 +1,100 @@
+affinity: {}
+fullnameOverride: ""
+image:
+  pullPolicy: Always
+  repository: pseudojo/node-hello-world
+  tag: 0.1
+imagePullSecrets: []
+ingress:
+  annotations: {}
+  enabled: false
+  hosts:
+  - host: chart-example.local
+    paths: []
+  tls: []
+nameOverride: ""
+nodeSelector: {}
+replicaCount: 1
+resources: {}
+service:
+  port: 8080
+  portName: tomcat
+  type: LoadBalancer
+tolerations: []
+subchart-example:
+  affinity: {}
+  fullnameOverride: ""
+  global: {}
+  image:
+    pullPolicy: Always
+    repository: pseudojo/node-hello-world
+    tag: 0.1
+  imagePullSecrets: []
+  ingress:
+    annotations: {}
+    enabled: false
+    hosts:
+    - host: chart-example.local
+      paths: []
+    tls: []
+  nameOverride: ""
+  nodeSelector: {}
+  replicaCount: 2
+  resources: {}
+  service:
+    port: 8080
+    type: LoadBalancer
+  tolerations: []
+node-subchart:
+  affinity: {}
+  fullnameOverride: ""
+  global: {}
+  image:
+    pullPolicy: Always
+    repository: node
+    tag: 12-alpine
+  imagePullSecrets: []
+  ingress:
+    annotations: {}
+    enabled: false
+    hosts:
+    - host: chart-example.local
+      paths: []
+    tls: []
+  nameOverride: ""
+  nodeSelector: {}
+  replicaCount: 2
+  resources: {}
+  service:
+    port: 8080
+    type: LoadBalancer
+  tolerations: []
+alpine-subchart:
+  affinity: {}
+  fullnameOverride: ""
+  global: {}
+  image:
+    pullPolicy: Always
+    repository: alpine
+    tag: 3.10
+  imagePullSecrets: []
+  ingress:
+    annotations: {}
+    enabled: false
+    hosts:
+    - host: chart-example.local
+      paths: []
+    tls: []
+  nameOverride: ""
+  nodeSelector: {}
+  replicaCount: 2
+  resources: {}
+  service:
+    port: 8080
+    type: LoadBalancer
+  tolerations: []
+centos-subchart:
+  chart: empty
+  image:
+    repository:
+    tag: 12-alpine
