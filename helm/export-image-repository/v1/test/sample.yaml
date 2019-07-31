@@ -93,8 +93,24 @@ alpine-subchart:
     port: 8080
     type: LoadBalancer
   tolerations: []
-centos-subchart:
-  chart: empty
-  image:
-    repository:
-    tag: 12-alpine
+cloudpc-whole-subchart:
+  centos-subchart:
+    chart: empty
+    image:
+      repository: centos
+      tag: 7
+  ubuntu-subchart:
+    chart: empty
+    image:
+      repository: ubuntu
+      tag: 19.04
+  invalid-subchart:
+    chart: empty
+    image:
+      repository:
+      tag: invalidchart-tag
+  invalid-subchart2:
+    chart: empty
+    image:
+      repository: invalidchart2-repo
+      tag:

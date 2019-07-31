@@ -9,7 +9,6 @@ def get_image_fullname(image):
         if image['repository'] is not None and image['tag'] is not None:
             return image['repository'] + ':' + str(image['tag'])
 
-
 def filter_func(item):
     key = item[0]
     value = item[1]
@@ -18,7 +17,6 @@ def filter_func(item):
         image = value['image']
         if image['repository'] is not None:
             return key + ' : ' + get_image_fullname(image)
-
 
 # main start
 chart = []
