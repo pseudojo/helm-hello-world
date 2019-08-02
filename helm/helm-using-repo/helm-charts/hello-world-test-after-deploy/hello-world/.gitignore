@@ -1,0 +1,3 @@
+# git commit ignore files
+requirements.lock
+charts/**

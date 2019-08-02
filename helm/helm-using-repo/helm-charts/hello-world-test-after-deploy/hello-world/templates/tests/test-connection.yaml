@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "hello-world.fullname" . }}-test-connection"
+  labels:
+{{ include "hello-world.labels" . | indent 4 }}
+  annotations:
+    "helm.sh/hook": test-success
+    #"helm.sh/hook": post-install
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      #args:  ['{{ include "hello-world.fullname" . }}:{{ .Values.service.port }}']
+      
+      # fail on purpose
+      args:  ['{{ include "hello-world.fullname" . }}:99']
+  restartPolicy: Never
